@@ -64,7 +64,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             sendResponse({ status: "success" }); 
         } catch (error) {
             console.error("Error applying blur from message: ", error);
-            sendResponse({ status: "error", message: error.message }); /
+            sendResponse({ status: "error", message: error.message });
         }
     }
 });
