@@ -5,8 +5,7 @@
     "description": "Uma extensão para aumentar a privacidade no WhatsApp Web.",
     "permissions": [
       "activeTab",
-      "storage",
-      "scripting"
+      "storage"
     ],
     "action": {
       "default_popup": "popup.html",
