@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Popup</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <style>
-        .container {
-            padding: 10px 20px 20px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h3 {
-            color: #343a40; 
-        }
-        .btn-custom {
-            font-size: 12px; 
-            font-weight: 600; 
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .btn-custom:hover {
-            background-color: #007bff;
-            color: #ffffff;
-        }
-    </style>
+    <title>Privacidade WhatsApp Web</title>
+    <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 <body>
     <div class="container">
-        <h3>Ajustes</h3>
+        <table>
+            <tr>
+                <td>
+                    <img src="images/icon48.png" class="icon">
+                </td>
+                <td>
+                    <h1>Ajustes</h1>
+                </td>
+            </tr>
+        </table>
         <hr>
-        <div class="mt-3">
-            <button id="toggleBlur" class="btn btn-custom btn-primary">
-                Ativar/Desativar Blur
-            </button>
+        <p id="mensagem">
+            Abra o WhatsApp Web para ativar ou desativar a privacidade.
+            <img src="images/secure.gif" class="whatsapp">
+        </p>
+        <div style="padding-top: 5px;">
+            <button id="toggleBlur" class="button-toggleblur" role="button">Button 33</button>
+            <br>
         </div>
+        <p class="opensource">Privacidade WhatsApp Web (v1.1.0) - Projeto 100% <a href="https://github.com/oalexandrefreire/PrivacidadeWhatsAppWeb" target="_blank">open source. </a></p>
     </div>
     <script src="popup.js"></script>
 </body>

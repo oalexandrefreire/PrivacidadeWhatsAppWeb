@@ -1,10 +1,20 @@
 const applyBlur = (enabled) => {
     const listItems = document.querySelectorAll('[role="listitem"]');
-    
+    const amidItems = document.querySelectorAll('._amid'); 
+    const messages = document.querySelectorAll('._amjv'); 
+
+    const applyBlurToElements = (elements) => {
+        elements.forEach(item => {
+            item.style.filter = enabled ? 'blur(5px)' : 'blur(0)';
+        });
+    };
+
+    applyBlurToElements(listItems);
+    applyBlurToElements(amidItems);
+    applyBlurToElements(messages);
+
     listItems.forEach(item => {
         try {
-            item.style.filter = enabled ? 'blur(5px)' : 'blur(0)';
-
             const images = item.querySelectorAll('img');
             images.forEach(image => {
                 image.style.filter = enabled ? 'blur(5px)' : 'blur(0)';
@@ -18,7 +28,7 @@ const applyBlur = (enabled) => {
             });
 
             item.addEventListener('mouseout', () => {
-                item.style.filter = enabled ? 'blur(5px)' : 'blur(0)';
+                applyBlurToElements([item]); 
                 images.forEach(image => {
                     image.style.filter = enabled ? 'blur(5px)' : 'blur(0)';
                 });
@@ -26,6 +36,26 @@ const applyBlur = (enabled) => {
         } catch (error) {
             console.error("Error applying blur to item: ", error);
         }
+    });
+
+    amidItems.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.style.filter = 'blur(0)';
+        });
+
+        item.addEventListener('mouseout', () => {
+            applyBlurToElements([item]); 
+        });
+    });
+
+    messages.forEach(message => {
+        message.addEventListener('mouseover', () => {
+            message.style.filter = 'blur(0)';
+        });
+
+        message.addEventListener('mouseout', () => {
+            applyBlurToElements([message]);
+        });
     });
 };
 
@@ -61,7 +91,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.blurEnabled !== undefined) {
         try {
             applyBlur(request.blurEnabled);
-            sendResponse({ status: "success" }); 
+            sendResponse({ status: "success" });
         } catch (error) {
             console.error("Error applying blur from message: ", error);
             sendResponse({ status: "error", message: error.message });
