@@ -1,4 +1,5 @@
 const applyBlur = (enabled) => {
+
     const listItems = document.querySelectorAll('[role="listitem"]');
     const amidItems = document.querySelectorAll('._amid'); 
     const messages = document.querySelectorAll('._amjv'); 
@@ -20,17 +21,10 @@ const applyBlur = (enabled) => {
                 image.style.filter = enabled ? 'blur(5px)' : 'blur(0)';
             });
 
-            item.addEventListener('mouseover', () => {
+            item.addEventListener('mousemove', () => {
                 item.style.filter = 'blur(0)';
                 images.forEach(image => {
                     image.style.filter = 'blur(0)';
-                });
-            });
-
-            item.addEventListener('mouseout', () => {
-                applyBlurToElements([item]); 
-                images.forEach(image => {
-                    image.style.filter = enabled ? 'blur(5px)' : 'blur(0)';
                 });
             });
         } catch (error) {
@@ -39,40 +33,17 @@ const applyBlur = (enabled) => {
     });
 
     amidItems.forEach(item => {
-        item.addEventListener('mouseover', () => {
+        item.addEventListener('mousemove', () => {
             item.style.filter = 'blur(0)';
-        });
-
-        item.addEventListener('mouseout', () => {
-            applyBlurToElements([item]); 
         });
     });
 
     messages.forEach(message => {
-        message.addEventListener('mouseover', () => {
+        message.addEventListener('mousemove', () => {
             message.style.filter = 'blur(0)';
-        });
-
-        message.addEventListener('mouseout', () => {
-            applyBlurToElements([message]);
         });
     });
 };
-
-chrome.storage.local.get('blurEnabled', (data) => {
-    let blurEnabled = data.blurEnabled;
-
-    if (blurEnabled === undefined) {
-        blurEnabled = false;
-        chrome.storage.local.set({ blurEnabled });
-    }
-
-    try {
-        applyBlur(blurEnabled);
-    } catch (error) {
-        console.error("Error applying initial blur: ", error);
-    }
-});
 
 const observer = new MutationObserver(() => {
     chrome.storage.local.get('blurEnabled', (data) => {

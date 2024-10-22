@@ -17,7 +17,14 @@ function checkIfWhatsAppWeb(tabs) {
     const isWhatsAppWeb = currentTab && currentTab.url.includes("web.whatsapp.com");
 
     chrome.storage.local.get('blurEnabled', (data) => {
-        const blurEnabled = data.blurEnabled !== undefined ? data.blurEnabled : true;
+        let blurEnabled = data.blurEnabled !== undefined ? data.blurEnabled : false; 
+
+        if (data.blurEnabled === undefined) {
+            chrome.storage.local.set({ blurEnabled: false }, () => {
+                chrome.tabs.reload(currentTab.id); 
+            });
+        }
+
         updateButton(isWhatsAppWeb, blurEnabled);
     });
 }
@@ -31,7 +38,7 @@ toggleButton.addEventListener('click', () => {
 
         if (isWhatsAppWeb) {
             chrome.storage.local.get('blurEnabled', (data) => {
-                const blurEnabled = data.blurEnabled !== undefined ? data.blurEnabled : true;
+                const blurEnabled = data.blurEnabled !== undefined ? data.blurEnabled : false; 
                 const newBlurEnabled = !blurEnabled;
 
                 chrome.storage.local.set({ blurEnabled: newBlurEnabled }, () => {
