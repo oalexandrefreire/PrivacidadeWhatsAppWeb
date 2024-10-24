@@ -1,14 +1,15 @@
-const toggleButton = document.getElementById('toggleBlur');
+const toggleSwitch = document.getElementById('switch'); 
 const mensagem = document.getElementById('mensagem');
+const pww = document.getElementById('pww');
 
-function updateButton(isWhatsAppWeb, blurEnabled) {
+function updateSwitch(isWhatsAppWeb, blurEnabled) {
     if (isWhatsAppWeb) {
-        toggleButton.style.display = 'block'; 
         mensagem.style.display = 'none'; 
-        toggleButton.textContent = blurEnabled ? 'Desativar Privacidade' : 'Ativar Privacidade';
+        pww.style.display = 'block'; 
+        toggleSwitch.checked = blurEnabled; 
     } else {
-        toggleButton.style.display = 'none'; 
         mensagem.style.display = 'block'; 
+        pww.style.display = 'none'; 
     }
 }
 
@@ -25,29 +26,26 @@ function checkIfWhatsAppWeb(tabs) {
             });
         }
 
-        updateButton(isWhatsAppWeb, blurEnabled);
+        updateSwitch(isWhatsAppWeb, blurEnabled);
     });
 }
 
 chrome.tabs.query({ active: true, currentWindow: true }, checkIfWhatsAppWeb);
 
-toggleButton.addEventListener('click', () => {
+toggleSwitch.addEventListener('change', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const currentTab = tabs[0];
         const isWhatsAppWeb = currentTab && currentTab.url.includes("web.whatsapp.com");
 
         if (isWhatsAppWeb) {
-            chrome.storage.local.get('blurEnabled', (data) => {
-                const blurEnabled = data.blurEnabled !== undefined ? data.blurEnabled : false; 
-                const newBlurEnabled = !blurEnabled;
+            const newBlurEnabled = toggleSwitch.checked; 
 
-                chrome.storage.local.set({ blurEnabled: newBlurEnabled }, () => {
-                    updateButton(true, newBlurEnabled); 
-                    chrome.tabs.sendMessage(currentTab.id, { blurEnabled: newBlurEnabled });
-                });
+            chrome.storage.local.set({ blurEnabled: newBlurEnabled }, () => {
+                updateSwitch(true, newBlurEnabled); 
+                chrome.tabs.sendMessage(currentTab.id, { blurEnabled: newBlurEnabled });
             });
         } else {
-            updateButton(false);
+            updateSwitch(false);
         }
     });
 });

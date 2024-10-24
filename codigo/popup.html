@@ -1,31 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <title>Privacidade WhatsApp Web</title>
     <link rel="stylesheet" type="text/css" href="popup.css">
+    <meta charset="UTF-8">
 </head>
 <body>
     <div class="container">
         <table>
             <tr>
                 <td>
-                    <img src="images/icon48.png" class="icon">
+                    <img style="max-width: 40px;" src="images/icon48.png" class="icon">
                 </td>
                 <td>
-                    <h1>Ajustes</h1>
+                    <h2>Privacidade WhatsApp Web</h2>
                 </td>
             </tr>
         </table>
         <hr>
-        <p id="mensagem">
-            Abra o WhatsApp Web para ativar ou desativar a privacidade.
-            <img src="images/secure.gif" class="whatsapp">
-        </p>
-        <div style="padding-top: 5px;">
-            <button id="toggleBlur" class="button-toggleblur" role="button">Button 33</button>
-            <br>
+        <div id="mensagem">
+            <p>Abra o WhatsApp Web para ativar ou desativar a privacidade.</p>
+            <center><img src="images/secure.gif" class="whatsapp"></center>
         </div>
-        <p class="opensource">Privacidade WhatsApp Web (v1.1.0) - Projeto 100% <a href="https://github.com/oalexandrefreire/PrivacidadeWhatsAppWeb" target="_blank">open source. </a></p>
+        <div id="pww" style="padding-top: 5px;">
+            <h3>Camadas de proteção: </h3>
+            <div class="checkbox-wrapper-35">
+                <input value="private" name="switch" id="switch" type="checkbox" class="switch">
+                <label for="switch">
+                    <span class="switch-x-text">Privacidade total </span>
+                    <span class="switch-x-toggletext">
+                        <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
+                        <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
+                    </span>
+                </label>
+            </div>
+            <br>
+            <div class="checkbox-wrapper-35">
+                <input value="private" name="switch" id="switch4" type="checkbox" class="switch">
+                <label for="switch4">
+                  <span class="switch-x-text">Nomes </span>
+                  <span class="switch-x-toggletext">
+                    <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
+                    <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
+                  </span>
+                </label>
+            </div>
+            <br>
+            <div class="checkbox-wrapper-35">
+                <input value="private" name="switch" id="switch3" type="checkbox" class="switch">
+                <label for="switch3">
+                  <span class="switch-x-text">Fotos perfil </span>
+                  <span class="switch-x-toggletext">
+                    <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
+                    <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
+                  </span>
+                </label>
+            </div>
+            <br>
+            <div class="checkbox-wrapper-35">
+                <input value="private" name="switch" id="switch5" type="checkbox" class="switch">
+                <label for="switch5">
+                  <span class="switch-x-text">Preview mensagem</span>
+                  <span class="switch-x-toggletext">
+                    <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
+                    <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
+                  </span>
+                </label>
+            </div>
+            <br>
+            <div class="checkbox-wrapper-35">
+                <input value="private" name="switch" id="switch2" type="checkbox" class="switch">
+                <label for="switch2">
+                  <span class="switch-x-text">Mensagens</span>
+                  <span class="switch-x-toggletext">
+                    <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
+                    <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
+                  </span>
+                </label>
+            </div>
+            <br>
+            <div class="checkbox-wrapper-35">
+                <input value="private" name="switch" id="switch7" type="checkbox" class="switch">
+                <label for="switch7">
+                  <span class="switch-x-text">Entrada de texto </span>
+                  <span class="switch-x-toggletext">
+                    <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
+                    <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
+                  </span>
+                </label>
+            </div>
+              <br> <br>
+        </div>
+        <p class="opensource">Privacidade WhatsApp Web (v1.3.2) - Projeto 100% <a href="https://github.com/oalexandrefreire/PrivacidadeWhatsAppWeb" target="_blank">open source. </a></p>
     </div>
     <script src="popup.js"></script>
 </body>

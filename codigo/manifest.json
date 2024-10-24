@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Privacidade WhatsApp Web",
-    "version": "1.2.1",
+    "version": "1.3.2",
     "description": "Uma extensão para aumentar a privacidade no WhatsApp Web.",
     "permissions": [
       "tabs",
