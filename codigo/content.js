@@ -41,16 +41,6 @@ const applyBlur = ({
     desfocarFotosCabecalhoConversa(fotoCabecalhoConversa, blurImagensEnabled);
 };
 
-const applyBlur2 = (blurEnabled) => {
-    const listaDeConversas = document.querySelectorAll('[role="listitem"]');
-    const mensagens = document.querySelectorAll('._amjv');
-    const cabecalhoConversas = document.querySelectorAll('._amid');
-
-    if (blurEnabled) {
-        desfoqueTotal(listaDeConversas, cabecalhoConversas, mensagens, blurEnabled);
-    }
-};
-
 function desfoqueTotal(listaDeConversas, cabecalhoConversas, mensagens, enabled)
 {
     desfocarListaDeConversasCompletamente(listaDeConversas, enabled);
@@ -155,15 +145,11 @@ function desfocarFotosCabecalhoConversa(fotoCabecalhoConversa, enabled){
     });
 }
 
-
-
 const applyBlurToElements = (elements, enabled) => {
     elements.forEach(item => {
         item.style.filter = enabled ? 'blur(7px)' : 'blur(0)';
     });
 };
-
-
 
 const observer = new MutationObserver(() => {
     chrome.storage.local.get(['blurEnabled', 'blurNomesEnabled', 'blurMensagensEnabled', 'blurPreviewEnabled', 'blurEntradaEnabled', 'blurImagensEnabled'], (data) => {
@@ -191,21 +177,9 @@ const observer = new MutationObserver(() => {
 
 observer.observe(document.body, { childList: true, subtree: true });
 
-// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-//     if (request.blurEnabled !== undefined) {
-//         try {
-//             applyBlur(request.blurEnabled);
-//             sendResponse({ status: "success" });
-//         } catch (error) {
-//             console.error("Error applying blur from message: ", error);
-//             sendResponse({ status: "error", message: error.message });
-//         }
-//     }
-// });
-
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     try {
-        // Destructure all the blur states from the request
+        
         const {
             blurEnabled,
             blurNomesEnabled,
@@ -215,7 +189,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             blurImagensEnabled
         } = request;
 
-        // Call applyBlur with the unpacked properties, providing defaults if undefined
         applyBlur({
             blurEnabled: blurEnabled !== undefined ? blurEnabled : false,
             blurNomesEnabled: blurNomesEnabled !== undefined ? blurNomesEnabled : false,
@@ -225,9 +198,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             blurImagensEnabled: blurImagensEnabled !== undefined ? blurImagensEnabled : false
         });
 
-        sendResponse({ status: "success" }); // Confirm success
+        sendResponse({ status: "success" }); 
     } catch (error) {
-        console.error("Error applying blur from message: ", error); // Log any error
-        sendResponse({ status: "error", message: error.message }); // Send error response
+        console.error("Error applying blur from message: ", error); 
+        sendResponse({ status: "error", message: error.message }); 
     }
 });

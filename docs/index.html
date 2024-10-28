@@ -1,84 +1,868 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacidade WhatsApp Web</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacidade WhatsApp Web - Apresentação</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!--====== Favicon Icon ======-->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#099a97">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#099a97">
+
+    <!-- ===== All CSS files ===== -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link rel="stylesheet" href="assets/css/ud-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .hero {
-            background-color: #007bff;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .features {
-            margin-top: 40px;
-        }
-        .feature {
-            border: 1px solid #007bff;
-            border-radius: 5px;
-            padding: 20px;
-            background-color: white;
-        }
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            padding: 20px 0;
-            background-color: #343a40;
-            color: white;
-        }
+
+      .ud-header{
+        padding-top: 10px;
+        padding-bottom: 12px;
+      }
+
+      .ud-hero{
+        background: linear-gradient(109.6deg, rgb(9, 154, 151) 11.2%, rgb(21, 205, 168) 91.1%);
+      }
+
+      .ud-hero-buttons .ud-link-btn:hover {
+          color: var(--white);
+          background: #003736;
+          opacity: 0.5;
+      }
+
+      .navbar-brand{
+        font-size: 25px;
+        font-weight: 900;
+        color: #ffffffff;
+        letter-spacing: 0px;
+        line-height: 35px;  
+      }
+
+      .bordas-imagem{
+        border: 5px solid #099a97;
+        border-top-left-radius: 17px;
+        border-top-right-radius: 17px;
+        border-bottom: none;
+      }
+
+
+      :root {
+          --font: "Inter", sans-serif;
+          --body-color: #637381;
+          --heading-color: #212b36;
+          --primary-color: #006d6b;
+          --white: #ffffff;
+      }
+      
     </style>
-</head>
 
-<body>
+  </head>
+  <body>
+    <!-- ====== Header Start ====== -->
+    <header class="ud-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="#">
+                <table>
+                  <tr>
+                      <td>
+                        <img src="https://res.cloudinary.com/alexandrefreire/image/upload/v1730068918/pww/images/qao0sfvxdfapugcyyzww.png" style="max-height: 55px;" alt="Logo" />
+                      </td>
+                      <td id="logo-sigla">
+                          PWW
+                          <p id="logo-nome" style="font-size: 13px;line-height: 10px;color: rgba(255, 255, 255, 0.616);">Privacidade WhatsApp Web</p>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+              <button class="navbar-toggler">
+                <span class="toggler-icon"> </span>
+                <span class="toggler-icon"> </span>
+                <span class="toggler-icon"> </span>
+              </button>
 
-    <header class="hero">
-        <div class="container">
-            <h1 class="display-4">Privacidade WhatsApp Web</h1>
-            <p class="lead">Uma extensão para aumentar a privacidade no WhatsApp Web.</p>
-            <a href="https://chromewebstore.google.com/detail/privacidade-whatsapp-web/ffdemjekkabokhngpmpkeaikeagdeofp" class="btn btn-light btn-lg">Faça o Download Agora</a>
+              <div class="navbar-collapse">
+                <ul id="nav" class="navbar-nav mx-auto">
+                </ul>
+              </div>
+
+              <div class="navbar-btn d-none d-sm-inline-block">
+                <a href="https://github.com/oalexandrefreire/PrivacidadeWhatsAppWeb" class="ud-main-btn ud-login-btn" target="_blank">
+                  GitHub 
+                </a>
+                <a class="ud-main-btn ud-white-btn" href="https://chromewebstore.google.com/detail/Privacidade%20WhatsApp%20Web/ffdemjekkabokhngpmpkeaikeagdeofp" target="_blank">
+                  Chrome Web Store
+                </a>
+              </div>
+            </nav>
+          </div>
         </div>
+      </div>
     </header>
+    <!-- ====== Header End ====== -->
 
-    <div class="container features">
-        <h2 class="text-center">Por que usar a extensão?</h2>
-        <p class="text-center">Com esta extensão, você poderá usar o WhatsApp Web com tranquilidade, sabendo que suas informações estão protegidas. Dê o primeiro passo para uma experiência mais segura no WhatsApp!</p>
+    <!-- ====== Hero Start ====== -->
+    <section class="ud-hero" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
+              <h1 class="ud-hero-title">
+                Proteja sua privacidade no WhatsApp Web!
+              </h1>
+              <p class="ud-hero-desc">
+                Nossa extensão permite que você consiga ocultar suas mensagens até que passe o mouse sobre elas.
+              </p>
+              <ul class="ud-hero-buttons">
+                <li>
+                  <a href="https://chromewebstore.google.com/detail/privacidade-whatsapp-web/ffdemjekkabokhngpmpkeaikeagdeofp" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-link-btn">
+                    <svg width="24" height="24" viewBox="0 0 25 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
+                      <path d="M11.6715 13.6301L10.2987 12.2581C10.0057 11.9653 9.53079 11.9654 9.23799 12.2584C8.94519 12.5514 8.94534 13.0263 9.23833 13.3191L11.8781 15.9572C12.0148 16.1008 12.2077 16.1903 12.4215 16.1903C12.648 16.1903 12.851 16.0899 12.9886 15.9311L15.6025 13.3191C15.8955 13.0263 15.8956 12.5514 15.6028 12.2584C15.31 11.9654 14.8352 11.9653 14.5422 12.2581L13.1715 13.6277V8.55962C13.1715 8.14541 12.8357 7.80962 12.4215 7.80962C12.0073 7.80962 11.6715 8.14541 11.6715 8.55962V13.6301Z" fill="#ffffff"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M2.42188 12C2.42188 6.47766 6.89916 2.00098 12.4214 2.00098C17.9437 2.00098 22.421 6.47766 22.421 12C22.421 17.5224 17.9437 21.9991 12.4214 21.9991C6.89916 21.9991 2.42188 17.5224 2.42188 12ZM12.4214 3.50098C7.72748 3.50098 3.92188 7.30619 3.92188 12C3.92188 16.6939 7.72748 20.4991 12.4214 20.4991C17.1154 20.4991 20.921 16.6939 20.921 12C20.921 7.30619 17.1154 3.50098 12.4214 3.50098Z" fill="#ffffff"/>
+                      </svg>
+                       Baixar Agora 
+                  </a>
+                </li>
+                <!-- <li>
+                  <a href="https://links.uideck.com/play-bootstrap-download" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-white-btn">
+                    Baixar para outro navegador
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+            <div
+              class="ud-hero-brands-wrapper wow fadeInUp"
+              data-wow-delay=".3s"
+            >
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="#5fcdb9" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
+              <path d="M21.4361 8.69472H14.6211C15.5949 9.46695 16.2218 10.6576 16.2229 11.997C16.2236 12.7388 16.0285 13.4674 15.6576 14.1099C15.5931 14.2206 15.5227 14.3263 15.4493 14.4297L11.2324 21.9657C11.488 21.9868 11.744 22.0008 12.0006 22C17.5214 21.9953 21.9956 17.521 22.0003 12.0003C22.0023 10.8732 21.8112 9.75518 21.4361 8.69472Z" fill="#5fcdb9"/>
+              <path d="M11.9862 16.2192C11.2506 16.2192 10.528 16.0252 9.89107 15.6572C9.24884 15.2857 8.7155 14.7521 8.34439 14.1097C8.25994 13.9634 8.18816 13.8134 8.12283 13.6621L3.80812 6.27781C2.88011 7.60493 2.28366 9.13761 2.07988 10.7487C1.40766 16.0692 5.05036 20.9395 10.2806 21.8464L13.6091 15.8983C13.1024 16.1075 12.5522 16.2199 11.9862 16.2192Z" fill="#5fcdb9"/>
+              <path d="M9.88863 8.3465C10.5306 7.97582 11.2591 7.78093 12.0006 7.78116C12.1538 7.78093 12.3046 7.79005 12.4535 7.80582H21.0701C20.3969 6.34825 19.3854 5.07002 18.1111 4.08557C13.8696 0.808423 7.82816 1.47399 4.39213 5.51558L7.82616 11.3927C8.00683 10.1596 8.72573 9.01783 9.88863 8.3465Z" fill="#5fcdb9"/>
+              <path d="M9.07262 10.3127C8.14061 11.9288 8.69506 13.9945 10.3113 14.9266C11.9275 15.8586 13.9933 15.3041 14.9253 13.6879C15.8573 12.0734 15.3042 10.0092 13.69 9.07717C13.1789 8.78205 12.5993 8.62628 12.0093 8.62494H12.0084C10.7973 8.6185 9.6764 9.26295 9.07262 10.3127Z" fill="#5fcdb9"/>
+            </svg>
 
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="feature text-center">
-                    <h3>Borrar Contatos</h3>
-                    <p>Proteja sua privacidade ao borrar contatos que você não deseja que apareçam na sua tela enquanto utiliza o WhatsApp Web.</p>
-                </div>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="#5fcdb9" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0131 2L16.729 3.98345C16.729 3.98345 18.2358 3.55704 18.9473 4.28194C19.6588 5.00684 20.2448 5.64644 20.2448 5.64644L19.7843 6.79774L20.3703 8.50338C20.3703 8.50338 18.6469 15.1535 18.445 15.9656C18.0475 17.5646 17.7754 18.1829 16.6453 18.9931C15.5153 19.8033 13.4645 21.2104 13.1296 21.4236C13.0575 21.4696 12.9815 21.5224 12.9029 21.5772C12.6165 21.7764 12.2951 22 11.9996 22C11.7041 22 11.3828 21.7765 11.0964 21.5772C11.0177 21.5225 10.9417 21.4696 10.8696 21.4236C10.5348 21.2104 8.48391 19.8033 7.35388 18.9931C6.22382 18.1829 5.95179 17.5646 5.55417 15.9656C5.35223 15.1535 3.62891 8.50338 3.62891 8.50338L4.21486 6.79774L3.75447 5.64644C3.75447 5.64644 4.34042 5.00684 5.05193 4.28194C5.76344 3.55704 7.27017 3.98345 7.27017 3.98345L8.98617 2H11.9996H15.0131ZM7.75147 5.24137C7.75147 5.24137 5.54428 7.95971 5.54428 8.54071C5.54428 9.02109 5.73408 9.20909 5.95762 9.43055C6.00445 9.47693 6.05272 9.52476 6.10106 9.57704L7.75603 11.3675C7.77243 11.3852 7.79068 11.4039 7.81 11.4237C7.97519 11.5929 8.2185 11.8421 8.04683 12.256C8.03537 12.2836 8.0236 12.3117 8.01163 12.3403C7.82348 12.7886 7.59115 13.3423 7.88685 13.9032C8.20142 14.4998 8.74025 14.898 9.08556 14.8322C9.43083 14.7663 10.2418 14.3346 10.54 14.1374C10.8382 13.9401 11.7833 13.146 11.7833 12.8421C11.7833 12.5887 11.1034 12.167 10.7732 11.9622C10.7076 11.9215 10.6557 11.8893 10.6258 11.8688C10.5917 11.8454 10.5347 11.8093 10.4645 11.7649C10.163 11.5741 9.6188 11.2295 9.60518 11.0768C9.58831 10.8885 9.59475 10.8333 9.83772 10.368C9.88939 10.269 9.94987 10.1629 10.0124 10.0533C10.2437 9.64782 10.5027 9.19379 10.4454 8.86852C10.3806 8.50136 9.81594 8.29081 9.33758 8.11248C9.27775 8.09018 9.21929 8.06836 9.16334 8.04685C9.0237 7.99312 8.84822 7.92616 8.66498 7.85624L8.6646 7.8561L8.66406 7.85586C8.18666 7.67368 7.65664 7.47141 7.56916 7.43034C7.44805 7.37342 7.47934 7.31922 7.84623 7.28378C7.89481 7.27908 7.95519 7.27256 8.02449 7.26505C8.47873 7.21588 9.31635 7.12517 9.72361 7.24082C9.80369 7.26357 9.89344 7.28834 9.98758 7.31431C10.4452 7.44056 11.006 7.59529 11.0599 7.68449C11.0693 7.7001 11.0786 7.71352 11.0873 7.72618C11.1388 7.80079 11.1725 7.84948 11.1154 8.16662C11.0985 8.26069 11.0638 8.44533 11.0209 8.67372C10.8945 9.34615 10.6969 10.3979 10.672 10.6339C10.6685 10.6668 10.6647 10.6985 10.661 10.7291C10.6294 10.992 10.6083 11.1672 10.9081 11.237L10.986 11.2552C11.3242 11.3343 11.8204 11.4503 11.9996 11.4503C12.1787 11.4503 12.6746 11.3344 13.0128 11.2553L13.0912 11.237C13.3909 11.1672 13.3698 10.9922 13.3382 10.7293C13.3345 10.6987 13.3307 10.6669 13.3272 10.6339C13.3024 10.3982 13.1052 9.34914 12.9788 8.67657C12.9357 8.44702 12.9007 8.26103 12.8838 8.16662C12.8267 7.84948 12.8603 7.80079 12.9119 7.72618C12.9206 7.71352 12.9299 7.70007 12.9393 7.68449C12.9932 7.59529 13.5539 7.44056 14.0115 7.31435C14.1056 7.28838 14.1955 7.26357 14.2756 7.24082C14.6828 7.12517 15.5206 7.21588 15.9748 7.26505C16.0441 7.27256 16.1044 7.27908 16.1529 7.28378C16.5199 7.31922 16.5512 7.37342 16.43 7.43034C16.3425 7.47144 15.812 7.67389 15.3344 7.85613C15.1512 7.92609 14.9755 7.99312 14.8359 8.04685C14.7802 8.06829 14.7219 8.08997 14.6624 8.11221L14.6619 8.11238C14.1835 8.29071 13.6186 8.50132 13.5538 8.86852C13.4965 9.19383 13.7556 9.64796 13.9869 10.0535C14.0494 10.163 14.1099 10.269 14.1615 10.368C14.4045 10.8333 14.4109 10.8885 14.3941 11.0768C14.3804 11.2296 13.8361 11.5741 13.5347 11.7649C13.4645 11.8093 13.4074 11.8454 13.3734 11.8688C13.3434 11.8894 13.2915 11.9215 13.2259 11.9623C12.8956 12.1671 12.2159 12.5887 12.2159 12.8421C12.2159 13.146 13.161 13.9401 13.4592 14.1374C13.7574 14.3346 14.5684 14.7663 14.9137 14.8322C15.259 14.898 15.7978 14.4998 16.1124 13.9032C16.4081 13.3422 16.1758 12.7887 15.9876 12.3404C15.9756 12.3118 15.9638 12.2837 15.9524 12.256C15.7807 11.8422 16.024 11.593 16.1891 11.4238C16.2085 11.404 16.2267 11.3853 16.2431 11.3675L17.8981 9.57704C17.9465 9.52476 17.9948 9.4769 18.0416 9.43051C18.2651 9.20909 18.4549 9.02105 18.4549 8.54071C18.4549 7.95971 16.2477 5.24137 16.2477 5.24137C16.2477 5.24137 14.3852 5.6038 14.1341 5.6038C13.9338 5.6038 13.5468 5.46804 13.1435 5.32652C13.0413 5.29071 12.9381 5.25451 12.8367 5.22003C12.3344 5.04949 11.9996 5.04822 11.9996 5.04822C11.9996 5.04822 12.0026 5.04825 12.0086 5.04842H11.9906C11.9961 5.04825 11.9991 5.04825 11.9996 5.04822C11.9944 5.04825 11.6609 5.05079 11.1625 5.22003C11.0611 5.25451 10.9579 5.29071 10.8558 5.32652C10.4524 5.46804 10.0655 5.6038 9.86507 5.6038C9.61397 5.6038 7.75147 5.24137 7.75147 5.24137ZM13.4392 15.0216C12.8494 14.7107 12.1143 14.4463 11.9996 14.4463C11.8849 14.4463 11.1498 14.7107 10.56 15.0216C10.4266 15.092 10.3014 15.1577 10.1861 15.2183L10.1854 15.2186C9.79134 15.4255 9.51176 15.5723 9.4061 15.6397C9.26948 15.7268 9.35278 15.8911 9.47725 15.9807C9.60172 16.0704 11.2742 17.3899 11.4365 17.5357C11.4573 17.5543 11.4792 17.5744 11.5021 17.5955C11.6585 17.7391 11.8581 17.9224 11.9996 17.9224C12.141 17.9224 12.3405 17.7393 12.4969 17.5956C12.5199 17.5746 12.5419 17.5543 12.5626 17.5357C12.725 17.3899 14.3975 16.0704 14.5219 15.9807C14.6464 15.8911 14.7297 15.7268 14.5931 15.6397C14.4875 15.5723 14.2082 15.4257 13.8145 15.219C13.6988 15.1583 13.5732 15.0923 13.4392 15.0216Z" fill="#5fcdb9"/>
+            </svg>
+
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="#5fcdb9" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
+                  <path d="M20.4628 17.1936C20.4306 17.1613 20.3661 17.1613 20.3338 17.1936C20.0757 17.3226 19.7532 17.4517 19.4628 17.5484C18.4951 17.9033 17.5596 18.0968 16.5596 18.0968C14.6564 18.0968 12.8822 17.4517 11.4628 16.3226C10.0434 15.1291 9.26925 13.5807 9.26925 11.9678C9.26925 11.6129 9.36602 11.1936 9.49506 10.871C7.07569 12.9678 6.62408 16.6129 8.59183 19.2259C9.04344 19.9033 9.62409 20.4517 10.3338 20.871C11.5918 21.6452 13.0757 21.9033 14.5273 21.6452C14.7531 21.613 14.9789 21.5484 15.1725 21.4517L15.2693 21.4194C17.3983 20.6775 19.2693 19.1936 20.4628 17.2904C20.5596 17.2581 20.5596 17.1936 20.4628 17.1936Z" fill="#5fcdb9"/>
+                  <path d="M10.2043 21.2258C10.172 21.1935 10.1075 21.1935 10.0753 21.129C9.39783 20.6774 8.81718 20.129 8.33331 19.4516C7.30105 18.0322 6.88169 16.258 7.13976 14.4838C7.39782 12.7096 8.36557 11.2258 9.78493 10.1613C9.78493 10.1613 9.81719 10.129 9.8817 10.129C10.0107 10.0322 10.2043 9.90319 10.3978 9.80641C10.5269 9.70964 10.6559 9.67738 10.8172 9.5806H10.8494C11.1075 9.45157 11.5914 9.25802 12.1075 9.25802C12.8495 9.25802 13.5269 9.5806 14.0107 10.0322C13.9785 9.93544 13.914 9.90319 13.8817 9.80641C13.4624 9.12899 12.8817 8.25802 11.5269 7.54834C10.1075 6.8064 8.55912 6.77414 8.26879 6.77414C5.17201 6.77414 2.59136 8.67738 2.13974 11.1935C2.04297 11.4193 2.04297 11.6451 2.04297 11.8709C2.04297 13.3871 2.36555 14.8709 3.01071 16.2258C4.55911 19.5484 7.78492 21.6452 11.2365 21.9677C11.4946 22 11.7849 22 12.043 22H12.0753C11.8495 21.9677 11.6559 21.9032 11.4301 21.8065C11.0107 21.6774 10.5914 21.4516 10.2043 21.2258Z" fill="#5fcdb9"/>
+                  <path d="M21.2363 7.19356L21.2041 7.09679C19.5589 3.96775 16.0428 2 12.0427 2C7.65563 2 3.88143 4.90323 2.55885 8.87099C2.52659 9.00002 2.46207 9.19357 2.42982 9.3226C2.55885 9.0968 2.7524 8.87099 2.91369 8.64518C3.23627 8.3226 3.55885 8.00002 3.91369 7.74195C5.04272 6.9355 6.55885 6.38711 8.17176 6.38711C8.62338 6.38711 10.1718 6.41937 11.6234 7.19356C13.075 7.96776 13.7524 8.87099 14.1718 9.61293C14.3653 9.93551 14.4944 10.2903 14.5911 10.6129C14.6234 10.8387 14.6879 11.0645 14.7202 11.2904C14.7524 11.6129 14.7524 11.871 14.7524 12.0323C14.7524 12.0645 14.7524 12.0645 14.7524 12.1291C14.7524 12.6129 14.4944 13.3226 14.075 13.871C14.0427 13.9033 14.0427 13.9033 13.9782 13.9678C13.8815 14.0646 13.8492 14.0968 13.8492 14.1936C13.8492 14.3226 13.946 14.4517 14.1073 14.6129C15.1395 15.3549 17.204 15.2904 17.3008 15.2581C18.1073 15.2581 18.8815 15.0323 19.6234 14.6129C21.075 13.8065 21.946 12.2581 21.946 10.5807C22.0428 8.87099 21.4944 7.74195 21.2363 7.19356Z" fill="#5fcdb9"/>
+            </svg>
+
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="#5fcdb9" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
+              <path d="M14.6452 3.32258C7.77419 3.32258 4.45161 12.3548 8.67742 17.6452C10.129 19.5161 12.2258 20.6774 14.6452 20.6774C16.0968 20.6774 17.5161 20.2258 18.6452 19.4516C16.9032 21 14.5484 22 12 22C11.871 22 11.6774 22 11.5484 22C6.22581 21.7742 2 17.3548 2 12C2 6.45161 6.45161 2 12 2H12.0323C14.5806 2 16.9032 2.96774 18.6774 4.54839C17.5161 3.77419 16.129 3.32258 14.6452 3.32258ZM18.7419 19.3548C17.0968 20.3548 15.0968 20.3226 13.4194 19.129C15.6774 18.2581 17.3871 15.4516 17.3871 12C17.3871 8.58064 15.7419 5.74194 13.4194 4.87097C15.0968 3.67742 17.0968 3.64516 18.7742 4.67742C23.0968 8.64516 23.0645 15.4194 18.7419 19.3548Z" fill="#5fcdb9"/>
+            </svg>
+              
             </div>
-            <div class="col-md-4">
-                <div class="feature text-center">
-                    <h3>Informações Seguras</h3>
-                    <p>Com a extensão, suas informações pessoais e dados sensíveis ficam mais protegidos durante o uso do WhatsApp Web.</p>
-                </div>
+            <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
+              <img src="privacidade.png" alt="hero-image" class="bordas-imagem"/>
+              <img
+                src="assets/images/hero/dotted-shape.svg"
+                alt="shape"
+                class="shape shape-1"
+              />
+              <img
+                src="assets/images/hero/dotted-shape.svg"
+                alt="shape"
+                class="shape shape-2"
+              />
             </div>
-            <div class="col-md-4">
-                <div class="feature text-center">
-                    <h3>Experiência Aprimorada</h3>
-                    <p>Aumente sua segurança e tenha uma experiência mais tranquila ao usar o WhatsApp Web com a nossa extensão.</p>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+    <!-- ====== Hero End ====== -->
 
-    <footer>
-        <p>&copy; 2024 Privacidade WhatsApp Web. Todos os direitos reservados.</p>
+    <!-- ====== Features Start ====== -->
+    <section id="features" class="ud-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-section-title">
+              <span>Conheça</span>
+              <h2>Nossas Funcionalidades</h2>
+              <p>
+                Com elas, você poderá navegar com total segurança, protegendo nomes, imagens e mensagens, garantindo a total tranquilidade.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 col-lg-3 col-sm-6">
+            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
+              <div class="ud-feature-icon">
+                <i class="fa-solid fa-eye-slash"></i>
+              </div>
+              <div class="ud-feature-content">
+                <h3 class="ud-feature-title">Modo Privacidade Total</h3>
+                <p class="ud-feature-desc">
+                  Proteja suas conversas no WhatsApp Web com um desfoque instantâneo.
+                </p>
+                <!-- <a href="javascript:void(0)" class="ud-feature-link">
+                  Learn More
+                </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-sm-6">
+            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
+              <div class="ud-feature-icon">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <div class="ud-feature-content">
+                <h3 class="ud-feature-title">Proteção de Imagens</h3>
+                <p class="ud-feature-desc">
+                  Este recurso desfoca a visualização de qualquer imagem automaticamente.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-sm-6">
+            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".2s">
+              <div class="ud-feature-icon">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <div class="ud-feature-content">
+                <h3 class="ud-feature-title">Proteção de mensagens</h3>
+                <p class="ud-feature-desc">
+                  Este recurso desfoca automaticamente as mensagens no WhatsApp Web.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-sm-6">
+            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
+              <div class="ud-feature-icon">
+                <i class="fa-solid fa-signature"></i>
+              </div>
+              <div class="ud-feature-content">
+                <h3 class="ud-feature-title">Proteção de nomes</h3>
+                <p class="ud-feature-desc">
+                  Este recurso oculta automaticamente os nomes dos contatos no WhatsApp Web.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Features End ====== -->
+
+    <!-- ====== About Start ====== -->
+    <section id="about" class="ud-about">
+      <div class="container">
+        <div class="ud-about-wrapper wow fadeInUp" data-wow-delay=".2s">
+          <div class="ud-about-content-wrapper">
+            <div class="ud-about-content">
+              <span class="tag">Privacidade</span>
+              <h2>Sua chance de controlar sua privacidade online.</h2>
+              <p>
+                Na era digital, proteger seus dados nunca foi tão importante. Nossa extensão open source para o WhatsApp Web foi criada pensando na sua privacidade. 
+              </p>
+
+              <p>
+                Com um conjunto robusto de camadas de proteção, você tem o controle total sobre as informações que deseja expor ou ocultar. E mais: você pode confiar plenamente na nossa transparência, já que o código fonte está disponível para você.
+              </p>
+              <a href="https://chromewebstore.google.com/detail/privacidade-whatsapp-web/ffdemjekkabokhngpmpkeaikeagdeofp" target="_blank" class="ud-main-btn"> Baixar Agora</a>
+            </div>
+          </div>
+          <div class="ud-about-image">
+            <img src="about.png" alt="about-image" style="    opacity: 0.40; filter: grayscale(100%);"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== About End ====== -->
+
+    <!-- ====== Pricing Start ====== -->
+    <!-- <section id="pricing" class="ud-pricing">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-section-title mx-auto text-center">
+              <span>Pricing</span>
+              <h2>Our Pricing Plans</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-0 align-items-center justify-content-center">
+          <div class="col-lg-4 col-md-6 col-sm-10">
+            <div
+              class="ud-single-pricing first-item wow fadeInUp"
+              data-wow-delay=".15s"
+            >
+              <div class="ud-pricing-header">
+                <h3>STARTING FROM</h3>
+                <h4>$ 19.99/mo</h4>
+              </div>
+              <div class="ud-pricing-body">
+                <ul>
+                  <li>5 User</li>
+                  <li>All UI components</li>
+                  <li>Lifetime access</li>
+                  <li>Free updates</li>
+                  <li>Use on 1 (one) project</li>
+                  <li>4 Months support</li>
+                </ul>
+              </div>
+              <div class="ud-pricing-footer">
+                <a href="javascript:void(0)" class="ud-main-btn ud-border-btn">
+                  Purchase Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-10">
+            <div
+              class="ud-single-pricing active wow fadeInUp"
+              data-wow-delay=".1s"
+            >
+              <span class="ud-popular-tag">POPULAR</span>
+              <div class="ud-pricing-header">
+                <h3>STARTING FROM</h3>
+                <h4>$ 30.99/mo</h4>
+              </div>
+              <div class="ud-pricing-body">
+                <ul>
+                  <li>5 User</li>
+                  <li>All UI components</li>
+                  <li>Lifetime access</li>
+                  <li>Free updates</li>
+                  <li>Use on 1 (one) project</li>
+                  <li>4 Months support</li>
+                </ul>
+              </div>
+              <div class="ud-pricing-footer">
+                <a href="javascript:void(0)" class="ud-main-btn ud-white-btn">
+                  Purchase Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-10">
+            <div
+              class="ud-single-pricing last-item wow fadeInUp"
+              data-wow-delay=".15s"
+            >
+              <div class="ud-pricing-header">
+                <h3>STARTING FROM</h3>
+                <h4>$ 70.99/mo</h4>
+              </div>
+              <div class="ud-pricing-body">
+                <ul>
+                  <li>5 User</li>
+                  <li>All UI components</li>
+                  <li>Lifetime access</li>
+                  <li>Free updates</li>
+                  <li>Use on 1 (one) project</li>
+                  <li>4 Months support</li>
+                </ul>
+              </div>
+              <div class="ud-pricing-footer">
+                <a href="javascript:void(0)" class="ud-main-btn ud-border-btn">
+                  Purchase Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- ====== Pricing End ====== -->
+
+    <!-- ====== FAQ Start ====== -->
+    <!-- <section id="faq" class="ud-faq">
+      <div class="shape">
+        <img src="assets/images/faq/shape.svg" alt="shape" />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-section-title text-center mx-auto">
+              <span>FAQ</span>
+              <h2>Any Questions? Answered</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="ud-single-faq wow fadeInUp" data-wow-delay=".1s">
+              <div class="accordion">
+                <button
+                  class="ud-faq-btn collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                >
+                  <span class="icon flex-shrink-0">
+                    <i class="lni lni-chevron-down"></i>
+                  </span>
+                  <span>How to use UIdeck?</span>
+                </button>
+                <div id="collapseOne" class="accordion-collapse collapse">
+                  <div class="ud-faq-body">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ud-single-faq wow fadeInUp" data-wow-delay=".15s">
+              <div class="accordion">
+                <button
+                  class="ud-faq-btn collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                >
+                  <span class="icon flex-shrink-0">
+                    <i class="lni lni-chevron-down"></i>
+                  </span>
+                  <span>How to download icons from Lineicons?</span>
+                </button>
+                <div id="collapseTwo" class="accordion-collapse collapse">
+                  <div class="ud-faq-body">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ud-single-faq wow fadeInUp" data-wow-delay=".2s">
+              <div class="accordion">
+                <button
+                  class="ud-faq-btn collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                >
+                  <span class="icon flex-shrink-0">
+                    <i class="lni lni-chevron-down"></i>
+                  </span>
+                  <span>Is GrayGrids part of UIdeck?</span>
+                </button>
+                <div id="collapseThree" class="accordion-collapse collapse">
+                  <div class="ud-faq-body">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ud-single-faq wow fadeInUp" data-wow-delay=".1s">
+              <div class="accordion">
+                <button
+                  class="ud-faq-btn collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                >
+                  <span class="icon flex-shrink-0">
+                    <i class="lni lni-chevron-down"></i>
+                  </span>
+                  <span>Can I use this template for commercial project?</span>
+                </button>
+                <div id="collapseFour" class="accordion-collapse collapse">
+                  <div class="ud-faq-body">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ud-single-faq wow fadeInUp" data-wow-delay=".15s">
+              <div class="accordion">
+                <button
+                  class="ud-faq-btn collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                >
+                  <span class="icon flex-shrink-0">
+                    <i class="lni lni-chevron-down"></i>
+                  </span>
+                  <span>Do you have plan releasing Play Pro?</span>
+                </button>
+                <div id="collapseFive" class="accordion-collapse collapse">
+                  <div class="ud-faq-body">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ud-single-faq wow fadeInUp" data-wow-delay=".2s">
+              <div class="accordion">
+                <button
+                  class="ud-faq-btn collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix"
+                >
+                  <span class="icon flex-shrink-0">
+                    <i class="lni lni-chevron-down"></i>
+                  </span>
+                  <span>Where and how to host this template?</span>
+                </button>
+                <div id="collapseSix" class="accordion-collapse collapse">
+                  <div class="ud-faq-body">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- ====== FAQ End ====== -->
+
+    <!-- ====== Testimonials Start ====== -->
+    <section id="testimonials" class="ud-testimonials">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-section-title mx-auto text-center">
+              <span>Avaliações</span>
+              <h2>Opiniões de Usuários Reais</h2>
+              <p>
+                Todas as reviews foram coletadas diretamente do Chrome Web Store. Confira o que os usuários estão falando sobre a extensão.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div
+              class="ud-single-testimonial wow fadeInUp"
+              data-wow-delay=".1s"
+            >
+              <div class="ud-testimonial-ratings">
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+              </div>
+              <div class="ud-testimonial-content">
+                <p>
+                  “Recomendo a extensão a todos! Segura e útil para o dia a dia para evitar os curiosos!
+                </p>
+              </div>
+              <div class="ud-testimonial-info">
+                <div class="ud-testimonial-image">
+                  <img
+                    src="avaliacao_1.jpg"
+                    alt="author"
+                  />
+                </div>
+                <div class="ud-testimonial-meta">
+                  <h4>João Marcos</h4>
+                  <p>Chrome Web Store <a href="https://chromewebstore.google.com/detail/privacidade-whatsapp-web/ffdemjekkabokhngpmpkeaikeagdeofp/reviews" target="_blank">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div
+              class="ud-single-testimonial wow fadeInUp"
+              data-wow-delay=".15s"
+            >
+              <div class="ud-testimonial-ratings">
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+              </div>
+              <div class="ud-testimonial-content">
+                <p style="min-height: 60px;">
+                  “Ótima extensão!
+                </p>
+              </div>
+              <div class="ud-testimonial-info">
+                <div class="ud-testimonial-image">
+                  <img
+                    src="avaliacao_2.jpg"
+                    alt="author"
+                  />
+                </div>
+                <div class="ud-testimonial-meta">
+                  <h4>Luciana Semeão</h4>
+                  <p>Chrome Web Store <a href="https://chromewebstore.google.com/detail/privacidade-whatsapp-web/ffdemjekkabokhngpmpkeaikeagdeofp/reviews" target="_blank">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div
+              class="ud-single-testimonial wow fadeInUp"
+              data-wow-delay=".2s"
+            >
+              <div class="ud-testimonial-ratings">
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+                <i class="lni lni-star-filled"></i>
+              </div>
+              <div class="ud-testimonial-content">
+                <p>
+                  “Muito bom, eu garanto!! Ferramenta intuitiva e fácil compreensão.
+                </p>
+              </div>
+              <div class="ud-testimonial-info">
+                <div class="ud-testimonial-image">
+                  <img
+                    src="avaliacao_3.jpg"
+                    alt="author"
+                  />
+                </div>
+                <div class="ud-testimonial-meta">
+                  <h4>André Vieira Cortez</h4>
+                  <p>Chrome Web Store <a href="https://chromewebstore.google.com/detail/privacidade-whatsapp-web/ffdemjekkabokhngpmpkeaikeagdeofp/reviews" target="_blank">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-brands wow fadeInUp" data-wow-delay=".2s">
+              <div class="ud-title">
+                <h6>Alta compatibilidade</h6>
+              </div>
+              <div class="ud-brands-logo">
+                <div class="ud-single-logo">
+                  <img
+                    src="store.png"
+                    alt="ecommerce-html"
+                  />
+                </div>
+                <div class="ud-single-logo">
+                  <img src="chrome-logo.png" alt="ayroui" />
+                </div>
+                <div class="ud-single-logo">
+                  <img src="edge-logo.webp" alt="uideck" />
+                </div>
+                <div class="ud-single-logo">
+                  <img style="max-height: 35px;"
+                    src="opera-logo.png"
+                    alt="graygrids"
+                  />
+                </div>
+                <div class="ud-single-logo">
+                  <img style="max-height: 38px;"
+                    src="brave-logo.png"
+                    alt="lineicons"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="height: 50px;"></div>
+    </section>
+    <!-- ====== Testimonials End ====== -->
+
+    <!-- ====== Contact Start ====== -->
+    <section id="contact" class="ud-contact">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-8 col-lg-7">
+            <div class="ud-contact-content-wrapper">
+              <div class="ud-contact-title">
+                <span>SUPORTE</span>
+                <h2>
+                  Entre em contato<br />
+                  Utilize um de nossos canais!
+                </h2>
+              </div>
+              <div class="ud-contact-info-wrapper">
+                <div class="ud-single-info">
+                  <div class="ud-info-icon">
+                    <i class="fa-solid fa-user-group"></i>
+                  </div>
+                  <div class="ud-info-meta">
+                    <h5>Sobre a extensão</h5>
+                    <p>Acesse nossa página no GitHub, e solicite novas funcionalidades, melhorias ou correções.  <a href="https://github.com/oalexandrefreire/PrivacidadeWhatsAppWeb/issues" target="_blank">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+                  </div>
+                </div>
+                <div class="ud-single-info">
+                  <div class="ud-info-icon">
+                    <i class="fa-solid fa-circle-question"></i>
+                  </div>
+                  <div class="ud-info-meta">
+                    <h5>Precisa de ajuda?</h5>
+                    <p>Entre em contato atráves do e-mail para dúvidas ou outros assuntos. <a href="mailto:contato@alexandrefreire.dev.br">contato@alexandrefreire.dev.br</a> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-5">
+            <div
+              class="ud-contact-form-wrapper wow fadeInUp"
+              data-wow-delay=".2s"
+            >
+              <h3 class="ud-contact-form-title">Proteja-se, assuma o controle.</h3>
+              <form class="ud-contact-form">
+                <div class="ud-form-group mb-0">
+                  <a href="https://chromewebstore.google.com/detail/privacidade-whatsapp-web/ffdemjekkabokhngpmpkeaikeagdeofp" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-link-btn">
+                    <svg width="24" height="24" viewBox="0 0 25 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)">
+                      <path d="M11.6715 13.6301L10.2987 12.2581C10.0057 11.9653 9.53079 11.9654 9.23799 12.2584C8.94519 12.5514 8.94534 13.0263 9.23833 13.3191L11.8781 15.9572C12.0148 16.1008 12.2077 16.1903 12.4215 16.1903C12.648 16.1903 12.851 16.0899 12.9886 15.9311L15.6025 13.3191C15.8955 13.0263 15.8956 12.5514 15.6028 12.2584C15.31 11.9654 14.8352 11.9653 14.5422 12.2581L13.1715 13.6277V8.55962C13.1715 8.14541 12.8357 7.80962 12.4215 7.80962C12.0073 7.80962 11.6715 8.14541 11.6715 8.55962V13.6301Z" fill="#ffffff"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M2.42188 12C2.42188 6.47766 6.89916 2.00098 12.4214 2.00098C17.9437 2.00098 22.421 6.47766 22.421 12C22.421 17.5224 17.9437 21.9991 12.4214 21.9991C6.89916 21.9991 2.42188 17.5224 2.42188 12ZM12.4214 3.50098C7.72748 3.50098 3.92188 7.30619 3.92188 12C3.92188 16.6939 7.72748 20.4991 12.4214 20.4991C17.1154 20.4991 20.921 16.6939 20.921 12C20.921 7.30619 17.1154 3.50098 12.4214 3.50098Z" fill="#ffffff"/>
+                      </svg>
+                       Baixar Agora 
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Contact End ====== -->
+
+    <!-- ====== Footer Start ====== -->
+    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
+      <div class="shape shape-1">
+        <img src="assets/images/footer/shape-1.svg" alt="shape" />
+      </div>
+      <div class="shape shape-2">
+        <img src="assets/images/footer/shape-2.svg" alt="shape" />
+      </div>
+      <div class="ud-footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <ul class="ud-footer-bottom-left">
+                <li>
+                  <a href="http://privacidade-whatsapp-web.vercel.app/privacy_policy.html">Política de Privacidade</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <p class="ud-footer-bottom-right">
+                Desenvolvido por 
+                <a href="https://alexandrefreire.dev.br" rel="nofollow">Alexandre Freire</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
+    <!-- ====== Footer End ====== -->
 
-    <!-- Link para o Bootstrap JS e dependências (opcional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <!-- ====== Back To Top Start ====== -->
+    <a href="javascript:void(0)" class="back-to-top">
+      <i class="lni lni-chevron-up"> </i>
+    </a>
+    <!-- ====== Back To Top End ====== -->
 
+    <!-- ====== All Javascript Files ====== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      // ==== for menu scroll
+      const pageLink = document.querySelectorAll(".ud-menu-scroll");
+
+      pageLink.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.querySelector(elem.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+            offsetTop: 1 - 60,
+          });
+        });
+      });
+
+      // section menu active
+      function onScroll(event) {
+        const sections = document.querySelectorAll(".ud-menu-scroll");
+        const scrollPos =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop;
+
+        for (let i = 0; i < sections.length; i++) {
+          const currLink = sections[i];
+          const val = currLink.getAttribute("href");
+          const refElement = document.querySelector(val);
+          const scrollTopMinus = scrollPos + 73;
+          if (
+            refElement.offsetTop <= scrollTopMinus &&
+            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+          ) {
+            document
+              .querySelector(".ud-menu-scroll")
+              .classList.remove("active");
+            currLink.classList.add("active");
+          } else {
+            currLink.classList.remove("active");
+          }
+        }
+      }
+
+      window.document.addEventListener("scroll", onScroll);
+    </script>
+  </body>
 </html>
