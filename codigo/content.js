@@ -22,8 +22,8 @@ const applyBlur = ({
     });
 
     //mensagens parcialmente desfocadas
-    // const mensagens1 = document.querySelectorAll('.message-in');
-    // const mensagens2 = document.querySelectorAll('.message-out');
+    const mensagens1 = document.querySelectorAll('.message-in');
+    const mensagens2 = document.querySelectorAll('.message-out');
 
     const nomes1 = document.querySelectorAll('._ak8q');
     const nomes2 = document.querySelectorAll('._amig');
@@ -32,13 +32,15 @@ const applyBlur = ({
     const entrada = document.querySelectorAll('._ak1r');
     const fotos = document.querySelectorAll('._ak8h');
 
-    desfoqueTotal(listaDeConversas, cabecalhoConversas, mensagens, blurEnabled);
     desfocarNomes(nomes1, nomes2, blurNomesEnabled);
-    desfocarMensagens(mensagens, blurMensagensEnabled);
+    //desfocarMensagens(mensagens, blurMensagensEnabled);
+    desfocarMensagens(mensagens1, blurMensagensEnabled);
+    desfocarMensagens(mensagens2, blurMensagensEnabled);
     desfocarPreview(preview, blurPreviewEnabled);
     desfocarEntrada(entrada, blurEntradaEnabled);
     desfocarFotos(fotos, blurImagensEnabled);
     desfocarFotosCabecalhoConversa(fotoCabecalhoConversa, blurImagensEnabled);
+    desfoqueTotal(listaDeConversas, cabecalhoConversas, mensagens, blurEnabled);
 };
 
 function desfoqueTotal(listaDeConversas, cabecalhoConversas, mensagens, enabled)
