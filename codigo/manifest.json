@@ -1,11 +1,10 @@
 {
     "manifest_version": 3,
     "name": "Privacidade WhatsApp Web - PWW",
-    "version": "1.3.2",
-    "description": "Uma extensão para aumentar a privacidade no WhatsApp Web.",
+    "version": "1.3.3",
+    "description": "Oculta suas mensagens até que passe o mouse sobre elas.",
     "permissions": [
       "tabs",
-      "activeTab",
       "storage"
     ],
     "background": {
