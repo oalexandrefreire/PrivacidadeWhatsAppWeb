@@ -1,9 +1,9 @@
 .container {
-    padding: 10px 15px 5px 15px;
+    padding: 20px 15px 5px 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     min-height: 90px;
-    min-width: 300px;
+    min-width: 330px;
     color: #ffffff;
     background: linear-gradient(109.6deg, rgb(9, 154, 151) 11.2%, rgb(21, 205, 168) 91.1%);
 }
@@ -35,7 +35,14 @@
   transform: scale(1.05) rotate(-1deg);
 }
 
-
+.navbar-brand{
+  font-size: 25px;
+  font-weight: 900;
+  font: "Inter", sans-serif;
+  color: #ffffffff;
+  letter-spacing: 0px;
+  line-height: 35px;  
+}
 
 
 .checkbox-wrapper-35 .switch {
@@ -210,12 +217,14 @@
 }
 
 /* Outline button variant: Success */
-.btn-outline-success {
-  color: #198754;
-  border-color: #198754;
+.btn-outline-success-pww {
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
-.btn-outline-secondary {
-  border-color: #ccc;
-  color: #ffffff;
+
+.ami div {display:none}
+.ami:hover div {display:block}
+.tooltippww{
+  font-size: smaller;
 }
