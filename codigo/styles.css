@@ -1,0 +1,23 @@
+.blurred-item {
+    filter: blur(7px) grayscale(1) !important;
+    transition: filter 0.5s ease-in-out;
+}
+
+.blurred-image {
+    filter: blur(14px) grayscale(1) !important;
+    transition: filter 0.5s ease-in-out;
+}
+
+.blurred-video {
+    filter: blur(15px) grayscale(1) !important;
+    transition: filter 0.5s ease-in-out;
+}
+
+.blurred-background {
+    filter: blur(15px) grayscale(1) !important;
+    transition: filter 0.5s ease-in-out;
+}
+
+.blurred-100 {
+    filter: blur(100px) !important;
+}

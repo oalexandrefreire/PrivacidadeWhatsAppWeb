@@ -28,7 +28,7 @@ chrome.runtime.onInstalled.addListener(() => {
         chrome.storage.local.set(storedValues, () => {
             console.log("Storage initialized with default values.");
             chrome.tabs.create({ url: "https://web.whatsapp.com" }, (tab) => {
-                chrome.tabs.create({ url: "https://privacidade-whatsapp-web.vercel.app/welcome.html" });
+                chrome.tabs.create({ url: "https://pwwextensao.vercel.app/welcome.html" });
             });
         });
     });

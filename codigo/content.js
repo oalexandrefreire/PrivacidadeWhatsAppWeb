@@ -24,134 +24,97 @@ const applyBlur = ({
     //mensagens parcialmente desfocadas
     const mensagens1 = document.querySelectorAll('.message-in');
     const mensagens2 = document.querySelectorAll('.message-out');
-
     const nomes1 = document.querySelectorAll('._ak8q');
     const nomes2 = document.querySelectorAll('._amig');
-
     const preview = document.querySelectorAll('._ak8j');
     const entrada = document.querySelectorAll('._ak1r');
     const fotos = document.querySelectorAll('._ak8h');
 
-    desfocarNomes(nomes1, nomes2, blurNomesEnabled);
-    //desfocarMensagens(mensagens, blurMensagensEnabled);
-    desfocarMensagens(mensagens1, blurMensagensEnabled);
-    desfocarMensagens(mensagens2, blurMensagensEnabled);
-    desfocarPreview(preview, blurPreviewEnabled);
-    desfocarEntrada(entrada, blurEntradaEnabled);
-    desfocarFotos(fotos, blurImagensEnabled);
-    desfocarFotosCabecalhoConversa(fotoCabecalhoConversa, blurImagensEnabled);
-    desfoqueTotal(listaDeConversas, cabecalhoConversas, mensagens, blurEnabled);
+    desfocarElementos(nomes1, blurNomesEnabled);
+    desfocarElementos(nomes2, blurNomesEnabled);
+    desfocarElementos(mensagens1, blurMensagensEnabled);
+    desfocarElementos(mensagens2, blurMensagensEnabled);
+    desfocarElementos(preview, blurPreviewEnabled);
+    desfocarElementos(entrada, blurEntradaEnabled);
+    desfocarElementos(fotos,blurImagensEnabled);
+    desfocarElementos(fotoCabecalhoConversa,blurImagensEnabled);
+
+    // desfoqueTotal
+    desfocarElementos(listaDeConversas,blurEnabled);
+    desfocarElementos(cabecalhoConversas,blurEnabled);
+    desfocarElementos(mensagens,blurEnabled);
 };
 
-function desfoqueTotal(listaDeConversas, cabecalhoConversas, mensagens, enabled)
-{
-    desfocarListaDeConversasCompletamente(listaDeConversas, enabled);
-    desfocarCabecalhoConversasCompletamente(cabecalhoConversas, enabled);
-    desfocarMensagens(mensagens, enabled);
-}
-
-function desfocarMensagens(mensagens, enabled)
-{
-    applyBlurToElements(mensagens, enabled);
-    mensagens.forEach(message => {
-        message.addEventListener('mousemove', () => {
-            message.style.filter = 'blur(0)';
-        });
-    });
-}
-
-function desfocarListaDeConversasCompletamente(listaDeConversas, enabled){
-
-    applyBlurToElements(listaDeConversas, enabled);
-
-    listaDeConversas.forEach(item => {
-        try {
-            const images = item.querySelectorAll('img');
-            images.forEach(image => {
-                image.style.filter = enabled ? 'blur(5px)' : 'blur(0)';
-            });
-
-            item.addEventListener('mousemove', () => {
-                item.style.filter = 'blur(0)';
-                images.forEach(image => {
-                    image.style.filter = 'blur(0)';
-                });
-            });
-        } catch (error) {
-            console.error("Error applying blur to item: ", error);
+const adicionarDesfoqueAosElementos = (elements, enabled) => {
+    elements.forEach(item => {
+        if (enabled) {
+            adicionarDesfoqueAoElementoEFilhos(item);
+        } else {
+            removerDesfoqueDoElementoEFilhos(item);
         }
     });
-}
-
-function desfocarCabecalhoConversasCompletamente(cabecalhoConversas, enabled)
-{
-    applyBlurToElements(cabecalhoConversas, enabled);
-    cabecalhoConversas.forEach(item => {
-        item.addEventListener('mousemove', () => {
-            item.style.filter = 'blur(0)';
-        });
-    });
-}
-
-function desfocarNomes(nomes1, nomes2, enabled)
-{
-    applyBlurToElements(nomes1, enabled);
-    nomes1.forEach(nome => {
-        nome.addEventListener('mousemove', () => {
-            nome.style.filter = 'blur(0)';
-        });
-    });
-
-    applyBlurToElements(nomes2, enabled);
-    nomes2.forEach(nome => {
-        nome.addEventListener('mousemove', () => {
-            nome.style.filter = 'blur(0)';
-        });
-    });
-}
-
-function desfocarPreview(preview, enabled){
-    applyBlurToElements(preview, enabled);
-    preview.forEach(item => {
-        item.addEventListener('mousemove', () => {
-            item.style.filter = 'blur(0)';
-        });
-    });
-}
-
-function desfocarEntrada(entrada, enabled){
-    applyBlurToElements(entrada, enabled);
-    entrada.forEach(item => {
-        item.addEventListener('mousemove', () => {
-            item.style.filter = 'blur(0)';
-        });
-    });
-}
-
-function desfocarFotos(fotos, enabled){
-
-    applyBlurToElements(fotos, enabled);
-    fotos.forEach(item => {
-        item.addEventListener('mousemove', () => {
-            item.style.filter = 'blur(0)';
-        });
-    });
-}
-
-function desfocarFotosCabecalhoConversa(fotoCabecalhoConversa, enabled){
-    applyBlurToElements(fotoCabecalhoConversa, enabled);
-    fotoCabecalhoConversa.forEach(item => {
-        item.addEventListener('mousemove', () => {
-            item.style.filter = 'blur(0)';
-        });
-    });
-}
-
-const applyBlurToElements = (elements, enabled) => {
-    elements.forEach(item => {
-        item.style.filter = enabled ? 'blur(7px)' : 'blur(0)';
-    });
 };
+
+const adicionarDesfoqueAoElementoEFilhos = (element) => {
+    const addBlur = (selector, className) => {
+        element.querySelectorAll(selector).forEach(item => item.classList.add(className));
+    };
+    
+    element.classList.add('blurred-item');
+    // addBlur('img', 'blurred-image');
+    if (!element.matches('[role="listitem"]')) {
+        addBlur('img', 'blurred-image');
+    }
+    addBlur('video', 'blurred-video');
+    addBlur('[style*="background-image"]', 'blurred-background');
+};
+
+const removerDesfoqueDoElementoEFilhos = (elemento) => {
+    const removerDesfoque = (seletor, classe) => {
+        elemento.querySelectorAll(seletor).forEach(item => item.classList.remove(classe));
+    };
+
+    elemento.classList.remove('blurred-item');
+    removerDesfoque('img', 'blurred-image');
+    removerDesfoque('video', 'blurred-video');
+    removerDesfoque('[style*="background-image"]', 'blurred-background');
+};
+
+function desfocarElementos(elementos, enabled) {
+
+    elementos.forEach(elemento => {
+        let tolerancia = 10;
+        let mouseX = 0, mouseY = 0;
+        
+        // Só aplica desfoque inicialmente se o mouse não estiver em cima do elemento
+        if (!elemento.matches(':hover')) {
+            adicionarDesfoqueAosElementos([elemento], enabled);
+        }
+
+        elemento.addEventListener('mouseenter', (event) => {
+            // Remove o blur assim que o mouse entra
+            removerDesfoqueDoElementoEFilhos(elemento);
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+        
+        // mousemove: Calcula a distância entre a posição atual do mouse e a posição inicial, usando o Teorema de Pitágoras para determinar a distância (distância Euclidiana). 
+        // Se a distância for maior que a tolerância definida, o blur é removido.
+        elemento.addEventListener('mousemove', (event) => {
+            let distancia = Math.sqrt(Math.pow(event.clientX - mouseX, 2) + Math.pow(event.clientY - mouseY, 2));
+            
+            if (distancia > tolerancia) {
+                removerDesfoqueDoElementoEFilhos(elemento);
+            }
+        });
+
+        elemento.addEventListener('mouseleave', () => {
+            if (!elemento.matches(':hover')) {
+                adicionarDesfoqueAosElementos([elemento], enabled);
+            }
+        });
+    });
+}
 
 const observer = new MutationObserver(() => {
     chrome.storage.local.get(['blurEnabled', 'blurNomesEnabled', 'blurMensagensEnabled', 'blurPreviewEnabled', 'blurEntradaEnabled', 'blurImagensEnabled'], (data) => {
