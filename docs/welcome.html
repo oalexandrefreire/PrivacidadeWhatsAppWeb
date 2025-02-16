@@ -1,46 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacidade WhatsApp Web</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Fixar uma Extensão do Chrome</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-            padding-bottom: 100px;
-        }
-
-        h1 {
-            color: #e44d26;
-        }
-
-        ol {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            margin: 10px 0;
-        }
-
-        .step {
-            margin-bottom: 15px;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
     <!--====== Favicon Icon ======-->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
@@ -51,7 +16,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -60,69 +25,253 @@
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#099a97">
 
-</head>
+    <!-- ===== All CSS files ===== -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link rel="stylesheet" href="assets/css/ud-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<body>
-    <div class="container">
-        <table>
-            <tr>
-                <td>
-                    <img src="assets/favicon/favicon-32x32.png" class="icon">
-                </td>
-                <td>
-                    <h1>Só mais uma etapa...</h1>
-                </td>
-            </tr>
-        </table>
-        <hr>
+    <style>
 
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        Nova versão da extensão instalada com sucesso! 🎉
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>✅ Privacidade Total:</strong> Oculte completamente a exibição das informações no WhatsApp até que passe o mouse sobre elas.<br>
-                        <strong>🆕 Privacidade por Elementos:</strong> Oculte de forma individual nomes, fotos, preview das mensagens, mensages e entrada de texto.<br>
-                    </div>
-                </div>
+      .ud-header{
+        padding-top: 10px;
+        padding-bottom: 12px;
+      }
+
+      .ud-hero-buttons .ud-link-btn:hover {
+          color: var(--white);
+          background: #003736;
+          opacity: 0.5;
+      }
+
+      .navbar-brand{
+        font-size: 25px;
+        font-weight: 900;
+        color: #ffffffff;
+        letter-spacing: 0px;
+        line-height: 35px;  
+      }
+
+      :root {
+          --font: "Inter", sans-serif;
+          --body-color: #637381;
+          --heading-color: #212b36;
+          --primary-color: #006d6b;
+          --white: #ffffff;
+      }
+
+
+
+      ol {
+        margin: 20px 0;
+        padding-left: 20px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        margin: 10px 0;
+      }
+
+      .step {
+        margin-bottom: 15px;
+      }
+      
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4QQPRXKLF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-W4QQPRXKLF');
+    </script>
+
+    <!-- Hotjar Tracking Code for PWW -->
+    <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:5226882,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+  </head>
+  <body>
+    <!-- ====== Header Start ====== -->
+    <header class="ud-header sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="index.html">
+                <table>
+                  <tr>
+                      <td>
+                        <img src="https://res.cloudinary.com/alexandrefreire/image/upload/v1730068918/pww/images/qao0sfvxdfapugcyyzww.png" style="max-height: 55px;" alt="Logo" />
+                      </td>
+                      <td id="logo-sigla">
+                          PWW
+                          <p id="logo-nome" style="font-size: 13px;line-height: 10px;color: rgba(255, 255, 255, 0.616);">Privacidade WhatsApp Web</p>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+              <button class="navbar-toggler">
+                <span class="toggler-icon"> </span>
+                <span class="toggler-icon"> </span>
+                <span class="toggler-icon"> </span>
+              </button>
+
+              <div class="navbar-collapse">
+                <ul id="nav" class="navbar-nav mx-auto">
+                </ul>
+              </div>
+
+              <div class="navbar-btn d-none d-sm-inline-block">
+                <a href="index.html" class="ud-main-btn ud-login-btn" >
+                  Página inicial
+                </a>
+                <a href="index.html#team" class="ud-main-btn ud-login-btn">
+                  Contribuidores
+                </a>
+                <a href="https://github.com/oalexandrefreire/PrivacidadeWhatsAppWeb" class="ud-main-btn ud-login-btn" target="_blank">
+                  GitHub
+                </a>
+                <a class="ud-main-btn ud-white-btn" href="https://chromewebstore.google.com/detail/Privacidade%20WhatsApp%20Web/ffdemjekkabokhngpmpkeaikeagdeofp" target="_blank">
+                  Baixar Extensão
+                </a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====== Header End ====== -->
+
+    <section id="team" class="ud-team">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-section-title mx-auto text-center">
+              <span>
+                Nova versão da extensão instalada com sucesso!
+              </span>
+              <h2 id="obrigado">Obrigado 😊</h2>
+              <br>
+              <p>
+              <div class="alert alert-info" role="alert">
+                OBS: Caso já tenha realizado o procedimento a seguir, não será necessário fazer novamente.
+              </div>
+              <div class="alert alert-primary" role="alert">
+                Para fixar sua nova extensão na barra de ferramentas do Chrome, siga os passos abaixo:
+              </div>
+              </p>
             </div>
+          </div>
         </div>
-        <br>
-        <div class="alert alert-info" role="alert">
-            OBS: Caso já tenha realizado este procedimento a seguir, não será necessário fazer novamente.
-        </div>
-        <div class="alert alert-primary" role="alert">
-            Para fixar sua nova extensão na barra de ferramentas do Chrome, siga os passos abaixo:
-        </div>
-        <hr>
+
         <ol>
-            <li class="step">
-                <h2>Clique no ícone de extensões do seu navegador.</h2>
-                <img src="assets/images/pin1.png" alt="Clique no ícone de extensões">
-                <p>O ícone de extensões geralmente parece como um quebra-cabeça no canto superior direito.</p>
-            </li>
-            <li class="step">
-                <h2>Localize a extensão "Privacidade WhatsApp Web" e clique no ícone de pin.</h2>
-                <img src="assets/images/pin.png" alt="Localize a extensão">
-            </li>
-            <li class="step">
-                <h2>Verifique a barra de ferramentas</h2>
-                <img src="assets/images/pin2.png" alt="Verifique a barra de ferramentas">
-                <p>A extensão agora deve estar visível na barra de ferramentas do Chrome.</p>
-                <dotlottie-player src="https://lottie.host/26f329f5-dc61-4575-9ac3-e50e83cb1317/rkvnTu2rCJ.json"
-                    background="transparent" speed="1" style="width: 150px; height: 150px" direction="1"
-                    playMode="normal" loop autoplay></dotlottie-player>
-            </li>
+          <li class="step">
+            <h3>Clique no ícone de extensões do seu navegador.</h3>
+            <img src="assets/images/pin1.png" alt="Clique no ícone de extensões">
+            <p>O ícone de extensões geralmente parece como um quebra-cabeça no canto superior direito.</p>
+          </li>
+
+          <li class="step">
+            <h3>Localize a extensão "Privacidade WhatsApp Web" e clique no ícone de pin.</h3>
+            <img src="assets/images/pin.png" alt="Localize a extensão">
+          </li>
+          <li class="step">
+            <h3>Verifique a barra de ferramentas</h3>
+            <img src="assets/images/pin2.png" alt="Verifique a barra de ferramentas">
+            <p>A extensão agora deve estar visível na barra de ferramentas do Chrome.</p>
+            <dotlottie-player src="https://lottie.host/26f329f5-dc61-4575-9ac3-e50e83cb1317/rkvnTu2rCJ.json"
+                              background="transparent" speed="1" style="width: 150px; height: 150px" direction="1"
+                              playMode="normal" loop autoplay></dotlottie-player>
+          </li>
         </ol>
-    </div>
+      </div>
+    </section>
+
+    <!-- ====== Footer Start ====== -->
+    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
+      <div class="shape shape-1">
+        <img src="assets/images/footer/shape-1.svg" alt="shape" />
+      </div>
+      <div class="shape shape-2">
+        <img src="assets/images/footer/shape-2.svg" alt="shape" />
+      </div>
+      <div class="ud-footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <ul class="ud-footer-bottom-left">
+                <li>
+                  <a href="http://pwwextensao.vercel.app/privacy_policy.html">Política de Privacidade</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <p class="ud-footer-bottom-right">
+                Desenvolvido por 
+                <a href="https://alexandrefreire.dev.br" rel="nofollow">Alexandre Freire</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ====== Footer End ====== -->
+
+    <!-- ====== Back To Top Start ====== -->
+    <a href="javascript:void(0)" class="back-to-top">
+      <i class="lni lni-chevron-up"> </i>
+    </a>
+    <!-- ====== Back To Top End ====== -->
 
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <!-- ====== All Javascript Files ====== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main-page.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mensagens = [
+          "Thank you 🙏", // EUA / Reino Unido (Inglês)
+          "Gracias 🎉", // México / Argentina / Colômbia (Espanhol)
+          "धन्यवाद 🌿", // Índia (Hindi)
+          "شكرا ✨", // Arábia Saudita (Árabe)
+          "Merci 🍷", // França (Francês)
+          "Grazie 🎭", // Itália (Italiano)
+          "Danke 🍺", // Alemanha (Alemão)
+          "Terima kasih 🌺", // Indonésia (Indonésio)
+          "Obrigado 😊", // Brasil (Português)
+        ];
+        let index = 0;
+        const elemento = document.getElementById("obrigado");
+        function trocarMensagem() {
+          elemento.style.opacity = 0;
+
+          setTimeout(() => {
+            elemento.textContent = mensagens[index];
+            elemento.style.opacity = 1;
+            index = (index + 1) % mensagens.length;
+          }, 500);
+        }
+        setInterval(trocarMensagem, 2500); // Troca a cada 4 segundos
+        elemento.style.transition = "opacity 0.5s ease-in-out";
+      });
+    </script>
+
+
+  </body>
 </html>
