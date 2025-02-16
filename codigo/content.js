@@ -9,7 +9,7 @@ const applyBlur = ({
 
     const listaDeConversas = document.querySelectorAll('[role="listitem"]');
     const mensagens = document.querySelectorAll('._amjv');
-    const cabecalhoConversas = document.querySelectorAll('._amid');
+    const cabecalhoConversas = document.querySelectorAll('#main header');
 
     let fotoCabecalhoConversa = [];
     mensagens.forEach(element => {
@@ -25,10 +25,12 @@ const applyBlur = ({
     const mensagens1 = document.querySelectorAll('.message-in');
     const mensagens2 = document.querySelectorAll('.message-out');
     const nomes1 = document.querySelectorAll('._ak8q');
-    const nomes2 = document.querySelectorAll('._amig');
+    const nomes2 = document.querySelectorAll('header ._ao3e');
     const preview = document.querySelectorAll('._ak8j');
     const entrada = document.querySelectorAll('._ak1r');
     const fotos = document.querySelectorAll('._ak8h');
+    const videos = document.querySelectorAll('#main video');
+    const videosBase64 = document.querySelectorAll('._ahn8');
 
     desfocarElementos(nomes1, blurNomesEnabled);
     desfocarElementos(nomes2, blurNomesEnabled);
@@ -37,6 +39,8 @@ const applyBlur = ({
     desfocarElementos(preview, blurPreviewEnabled);
     desfocarElementos(entrada, blurEntradaEnabled);
     desfocarElementos(fotos,blurImagensEnabled);
+    desfocarElementos(videos,blurImagensEnabled);
+    desfocarElementos(videosBase64,blurImagensEnabled);
     desfocarElementos(fotoCabecalhoConversa,blurImagensEnabled);
 
     // desfoqueTotal
@@ -59,14 +63,8 @@ const adicionarDesfoqueAoElementoEFilhos = (element) => {
     const addBlur = (selector, className) => {
         element.querySelectorAll(selector).forEach(item => item.classList.add(className));
     };
-    
+
     element.classList.add('blurred-item');
-    // addBlur('img', 'blurred-image');
-    if (!element.matches('[role="listitem"]')) {
-        addBlur('img', 'blurred-image');
-    }
-    addBlur('video', 'blurred-video');
-    addBlur('[style*="background-image"]', 'blurred-background');
 };
 
 const removerDesfoqueDoElementoEFilhos = (elemento) => {
@@ -75,9 +73,6 @@ const removerDesfoqueDoElementoEFilhos = (elemento) => {
     };
 
     elemento.classList.remove('blurred-item');
-    removerDesfoque('img', 'blurred-image');
-    removerDesfoque('video', 'blurred-video');
-    removerDesfoque('[style*="background-image"]', 'blurred-background');
 };
 
 function desfocarElementos(elementos, enabled) {

@@ -1,23 +1,22 @@
 .blurred-item {
+    transition: filter 0.2s ease-in-out;
     filter: blur(7px) grayscale(1) !important;
-    transition: filter 0.5s ease-in-out;
 }
 
-.blurred-image {
-    filter: blur(14px) grayscale(1) !important;
-    transition: filter 0.5s ease-in-out;
+#main .blurred-item img{
+    transition: filter 0.2s ease-in-out;
+    filter: blur(18px) grayscale(1) !important;
 }
 
-.blurred-video {
-    filter: blur(15px) grayscale(1) !important;
-    transition: filter 0.5s ease-in-out;
+#main .blurred-item video{
+    transition: filter 0.2s ease-in-out;
+    filter: blur(18px) grayscale(1) !important;
 }
 
-.blurred-background {
-    filter: blur(15px) grayscale(1) !important;
-    transition: filter 0.5s ease-in-out;
+img.blurred-item {
+    filter: blur(18px) grayscale(1) !important;
 }
 
-.blurred-100 {
-    filter: blur(100px) !important;
+video.blurred-item {
+    filter: blur(25px) grayscale(1) !important;
 }
