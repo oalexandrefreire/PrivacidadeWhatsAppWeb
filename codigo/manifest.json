@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "PWW - Privacidade WhatsApp Web",
-    "version": "1.4.6",
+    "version": "1.4.7",
     "description": "Suas mensagens ficam ocultas para garantir mais privacidade, sendo exibidas apenas quando você passa o mouse sobre elas",
     "permissions": [
       "tabs",
