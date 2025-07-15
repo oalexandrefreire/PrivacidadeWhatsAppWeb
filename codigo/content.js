@@ -9,6 +9,8 @@ const applyBlur = ({
 
     const listaDeConversas = document.querySelectorAll('[role="listitem"]');
     const mensagens = document.querySelectorAll('._amjv');
+    const mensagensFotosPerfil = document.querySelectorAll('.x1f5funs.x10l6tqk.x1wnpwf8.x1vjfegm');
+    const mensagensPerfilSemFoto = document.querySelectorAll('.x1rg5ohu.xk50ysn');
     const cabecalhoConversas = document.querySelectorAll('#main header');
 
     let fotoCabecalhoConversa = [];
@@ -16,6 +18,12 @@ const applyBlur = ({
         const images = element.querySelectorAll('img');
         fotoCabecalhoConversa.push(...images);
     });
+
+    mensagensFotosPerfil.forEach(element => {
+        const images = element.querySelectorAll('img');
+        fotoCabecalhoConversa.push(...images);
+    });
+
     cabecalhoConversas.forEach(element => {
         const images = element.querySelectorAll('img');
         fotoCabecalhoConversa.push(...images);
@@ -29,9 +37,11 @@ const applyBlur = ({
     const preview = document.querySelectorAll('._ak8j');
     const entrada = document.querySelectorAll('._ak1r');
     const fotos = document.querySelectorAll('._ak8h');
+    const fotosRespostasMensagens = document.querySelectorAll('.x10l6tqk.xh8yej3.x5yr21d.x1xsqp64.x18d0r48');
     const videos = document.querySelectorAll('#main video');
     const videosBase64 = document.querySelectorAll('._ahn8');
 
+    //desfoque parcial
     desfocarElementos(nomes1, blurNomesEnabled);
     desfocarElementos(nomes2, blurNomesEnabled);
     desfocarElementos(mensagens1, blurMensagensEnabled);
@@ -39,6 +49,8 @@ const applyBlur = ({
     desfocarElementos(preview, blurPreviewEnabled);
     desfocarElementos(entrada, blurEntradaEnabled);
     desfocarElementos(fotos,blurImagensEnabled);
+    desfocarElementos(mensagensPerfilSemFoto,blurImagensEnabled);
+    desfocarElementos(fotosRespostasMensagens,blurImagensEnabled);
     desfocarElementos(videos,blurImagensEnabled);
     desfocarElementos(videosBase64,blurImagensEnabled);
     desfocarElementos(fotoCabecalhoConversa,blurImagensEnabled);
@@ -47,6 +59,7 @@ const applyBlur = ({
     desfocarElementos(listaDeConversas,blurEnabled);
     desfocarElementos(cabecalhoConversas,blurEnabled);
     desfocarElementos(mensagens,blurEnabled);
+    desfocarElementos(mensagensFotosPerfil,blurEnabled);
 };
 
 const adicionarDesfoqueAosElementos = (elements, enabled) => {
